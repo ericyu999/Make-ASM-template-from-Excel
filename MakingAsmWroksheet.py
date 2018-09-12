@@ -26,7 +26,7 @@ def cleanExcel(filename):
 # So need to run below function after file created
 def ExcelSaveClose(filename):
     excel = win32.gencache.EnsureDispatch('Excel.Application') # opens Excel
-    wb = excel.Workbooks.Open(filename)  # opens the file
+    wb = excel.Workbooks.Open(os.path.join(os.getcwd(), filename))  # opens the file
     wb.Save()
     wb.Close()
     excel.Quit()
