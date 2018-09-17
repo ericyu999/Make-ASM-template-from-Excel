@@ -17,3 +17,7 @@ installation procedure
 6. move WorksheetMaker.bat to Python script folder
 7. win + R, type worksheetmaker
 8. follow the prompt and enjoy!
+
+
+This Branch is an experiment to replace WIN32 module with Python standard open and close. 
+see if it solves the ASM error. Guess the problem lies when openpyxl save the file, the cursor stays at the end of file.
