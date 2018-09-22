@@ -21,7 +21,22 @@ def cleanExcel(filename):
 
     wb.save(filename)
 
+###########
+# Function to delete trailing spaces on HS CODE column J
+def trimExcel(filename):
 
+    wb = openpyxl.load_workbook(filename)
+
+    for sheet in wb:
+        for row in sheet.iter_rows(min_row=12, min_col=10, max_row=sheet.max_row - 1, max_col=10):
+            for cell in row:
+                if type(cell.value) == str:
+                    try:
+                        cell.value = int(cell.value.strip())
+                    except ValueError:
+                        pass
+
+    wb.save(filename)
 
 #################
 # Due to unknown reason, the files created must be open and save by excel before can be uploaded to ASM
@@ -59,6 +74,7 @@ def WorksheetMaker():
 
 
     cleanExcel(filename)
+    trimExcel(filename)
 
     templatename = r'C:\Users\Xiaodong\Documents\GitHub\Make-ASM-template-from-Excel\ASMtemplate.xlsx'        #ASM TEMPLATE FILE LOCATION AND name
 
