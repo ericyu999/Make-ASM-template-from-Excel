@@ -1,1 +1,1 @@
-@python %~dp0\MakingAsmWorksheetGUI.py %*
+@python "%~dp0\MakingAsmWorksheetGUI.py" %*
