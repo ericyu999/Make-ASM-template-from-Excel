@@ -1,2 +1,4 @@
 wxPython
 gooey
+openpyxl
+pywin32
