@@ -131,8 +131,10 @@ def WorksheetMaker(filename, destFolder, template):
             sheet_t.cell(row=i, column=9).value = 100                                       # col I --- 100
             sheet_t.cell(row=i, column=10).value = 4000000                                  # col J --- 4000000
             sheet_t.cell(row=i, column=11).value = sheet.cell(row=eachrow, column=6).value   # col K --- F12
-            sheet_t.cell(row=i, column=13).value = sheet.cell(row=eachrow, column=4).value    # col M --- D12
-            sheet_t.cell(row=i, column=14).value = 'GBP'                                      # col N --- GBP, change to other currency if necessary
+            # sheet_t.cell(row=i, column=13).value = sheet.cell(row=eachrow, column=4).value    # col M --- D12
+            sheet_t.cell(row=i, column=13).value = sheet.cell(row=eachrow, column=13).value  # col M --- M12
+            # sheet_t.cell(row=i, column=14).value = 'GBP'                                      # col N --- GBP, change to other currency if necessary
+            sheet_t.cell(row=i, column=14).value = sheet.cell(row=11, column=8).value           # col N --- H11 fixed value
             sheet_t.cell(row=i, column=16).value = sheet.cell(row=eachrow, column=9).value    # col P --- I12
             sheet_t.cell(row=i, column=19).value = 'B'                                        # col S --- B
             sheet_t.cell(row=i, column=20).value = 0                                          # col T --- 0
