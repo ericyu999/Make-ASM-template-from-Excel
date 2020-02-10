@@ -55,7 +55,7 @@ def cleanExcel(filename):
     for sheet in wb:
 #        print(sheet.title + ' max row before: ' + str(sheet.max_row))
         for i in range(12, sheet.max_row + 1):
-            if sheet['I' + str(i)].value == None:
+            if sheet['G' + str(i)].value == None:  #need to be the Total column
                 sheet.delete_rows(i, sheet.max_row + 1 - i)
 #        print('max row after: ' + str(sheet.max_row))
     wb.save(filename)
