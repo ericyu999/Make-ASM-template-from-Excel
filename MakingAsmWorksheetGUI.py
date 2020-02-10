@@ -139,7 +139,7 @@ def WorksheetMaker(filename, destFolder, template):
             sheet_t.cell(row=i, column=19).value = 'B'  # col S --- B
             sheet_t.cell(row=i, column=20).value = 0  # col T --- 0
             sheet_t.cell(row=i, column=24).value = 'S'  # col X --- S
-            sheet_t.cell(row=i, column=25).value = sheet.cell(row=eachrow, column=4).value  # col Y --- D12, change to C12, 10/02/2020
+            sheet_t.cell(row=i, column=25).value = sheet.cell(row=eachrow, column=3).value  # col Y --- D12, change to C12, 10/02/2020
             sheet_t.cell(row=i, column=26).value = 'PK'  # col Z --- PK
             sheet_t.cell(row=i, column=27).value = r'N/M'  # col AA --- 'N/M'
             sheet_t.cell(row=i, column=53).value = 'Z'  # col BA --- 'Z'
