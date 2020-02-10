@@ -124,31 +124,30 @@ def WorksheetMaker(filename, destFolder, template):
         newFileList.append(newfilename + '.xlsx')
         i = 2                                                     # from which row in template to start filling the data
         for eachrow in range (12, sheet.max_row):
-            sheet_t.cell(row=i, column=5).value = 'CN'                 # column E --- CN
-            sheet_t.cell(row=i, column=6).value = sheet.cell(row=eachrow, column=2).value   # col F --- B12
-            sheet_t.cell(row=i, column=7).value = sheet.cell(row=eachrow, column=10).value  # col G --- J12
-            sheet_t.cell(row=i, column=8).value = sheet.cell(row=eachrow, column=5).value   # col H --- E12
-            sheet_t.cell(row=i, column=9).value = 100                                       # col I --- 100
-            sheet_t.cell(row=i, column=10).value = 4000000                                  # col J --- 4000000
-            sheet_t.cell(row=i, column=11).value = sheet.cell(row=eachrow, column=6).value   # col K --- F12
+            sheet_t.cell(row=i, column=5).value = 'CN'  # column E --- CN
+            sheet_t.cell(row=i, column=6).value = sheet.cell(row=eachrow, column=1).value  # col F --- B12, CHANGE TO A12, 10/02/2020, based on new inv/packing
+            sheet_t.cell(row=i, column=7).value = sheet.cell(row=eachrow, column=8).value  # col G --- J12, change to H12, 10/02/2020
+            # sheet_t.cell(row=i, column=8).value = sheet.cell(row=eachrow, column=5).value   # col H --- E12  GW COLUMN, REMOVED ON 11/12/2019 as requested by NEPTUNE
+            sheet_t.cell(row=i, column=9).value = 100  # col I --- 100
+            sheet_t.cell(row=i, column=10).value = 4000000  # col J --- 4000000
+            sheet_t.cell(row=i, column=11).value = sheet.cell(row=eachrow, column=4).value  # col K --- F12, change to D12, 10/02/2020
             # sheet_t.cell(row=i, column=13).value = sheet.cell(row=eachrow, column=4).value    # col M --- D12
-            sheet_t.cell(row=i, column=13).value = sheet.cell(row=eachrow, column=13).value  # col M --- M12
+            sheet_t.cell(row=i, column=13).value = sheet.cell(row=eachrow, column=9).value  # col M --- M12, supplyment unit, change to I12, 10/02/2020
             # sheet_t.cell(row=i, column=14).value = 'GBP'                                      # col N --- GBP, change to other currency if necessary
-            sheet_t.cell(row=i, column=14).value = sheet.cell(row=11, column=8).value           # col N --- H11 fixed value
-            sheet_t.cell(row=i, column=16).value = sheet.cell(row=eachrow, column=9).value    # col P --- I12
-            sheet_t.cell(row=i, column=19).value = 'B'                                        # col S --- B
-            sheet_t.cell(row=i, column=20).value = 0                                          # col T --- 0
-            sheet_t.cell(row=i, column=24).value = 'S'                                        # col X --- S
-            sheet_t.cell(row=i, column=25).value = sheet.cell(row=eachrow, column=4).value    # col Y --- D12
-            sheet_t.cell(row=i, column=26).value = 'PK'                                       # col Z --- PK
-            sheet_t.cell(row=i, column=27).value = r'N/M'                                     # col AA --- 'N/M'
-            sheet_t.cell(row=i, column=53).value = 'Z'                                        # col BA --- 'Z'
-            sheet_t.cell(row=i, column=54).value = 380                                        # col BB --- 380
-            sheet_t.cell(row=i, column=55).value = sheet.cell(row=6, column=2).value          # col BC --- B6 fixed value
-            sheet_t.cell(row=i, column=65).value = sheet.cell(row=6, column=2).value          # col BM --- B6 fixed value
+            sheet_t.cell(row=i, column=14).value = sheet.cell(row=11, column=6).value  # col N --- H11 fixed value, change to F11, 10/02/2020
+            sheet_t.cell(row=i, column=16).value = sheet.cell(row=eachrow, column=7).value  # col P --- I12, change to G12, 10/02/2020
+            sheet_t.cell(row=i, column=19).value = 'B'  # col S --- B
+            sheet_t.cell(row=i, column=20).value = 0  # col T --- 0
+            sheet_t.cell(row=i, column=24).value = 'S'  # col X --- S
+            sheet_t.cell(row=i, column=25).value = sheet.cell(row=eachrow, column=4).value  # col Y --- D12, change to C12, 10/02/2020
+            sheet_t.cell(row=i, column=26).value = 'PK'  # col Z --- PK
+            sheet_t.cell(row=i, column=27).value = r'N/M'  # col AA --- 'N/M'
+            sheet_t.cell(row=i, column=53).value = 'Z'  # col BA --- 'Z'
+            sheet_t.cell(row=i, column=54).value = 380  # col BB --- 380
+            sheet_t.cell(row=i, column=55).value = sheet.cell(row=6, column=2).value  # col BC --- B6 fixed value
+            sheet_t.cell(row=i, column=65).value = sheet.cell(row=6, column=2).value  # col BM --- B6 fixed value
 
-
-            i += 1
+        i += 1
 
 
 
