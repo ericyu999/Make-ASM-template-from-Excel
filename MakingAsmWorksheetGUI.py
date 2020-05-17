@@ -52,7 +52,13 @@ def parse_args():
 #Function to delete empty rows at the end of each sheet
 def cleanExcel(filename):
     wb = openpyxl.load_workbook(filename)
+    # as openpyxl 2.5.7 does not read all possible items in an Excel file so images and charts will be lost from existing file
+    # use this to clear all images
+    wb.save(filename)
+    wb = openpyxl.load_workbook(filename)
     for sheet in wb:
+        # delte images on worksheet, not quite working, seems need to add index
+        # del sheet._images
 #        print(sheet.title + ' max row before: ' + str(sheet.max_row))
         for i in range(12, sheet.max_row + 1):
             if sheet['G' + str(i)].value == None:  #need to be the Total column
@@ -147,7 +153,7 @@ def WorksheetMaker(filename, destFolder, template):
             sheet_t.cell(row=i, column=55).value = sheet.cell(row=6, column=2).value  # col BC --- B6 fixed value
             sheet_t.cell(row=i, column=65).value = sheet.cell(row=6, column=2).value  # col BM --- B6 fixed value
 
-        i += 1
+            i += 1
 
 
 
