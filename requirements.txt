@@ -1,4 +1,4 @@
-wxPython
-gooey
+wxPython==4.0.6
+gooey==1.0.2
 openpyxl==2.6.2
-pywin32
+pywin32==224
